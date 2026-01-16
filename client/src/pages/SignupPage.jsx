@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import './SignupPage.css';
@@ -18,6 +18,14 @@ const SignupPage = () => {
     });
     const [status, setStatus] = useState({ error: '', success: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Check if user is already logged in
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            navigate('/chat');
+        }
+    }, [navigate]);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -70,8 +78,11 @@ const SignupPage = () => {
                 return;
             }
 
-            setStatus({ error: '', success: 'Account created! Redirecting to login...' });
-            setTimeout(() => navigate('/login'), 1200);
+            // Store token and user data, then redirect to chat
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+            setStatus({ error: '', success: 'Account created! Redirecting...' });
+            setTimeout(() => navigate('/chat'), 500);
         } catch (err) {
             setStatus({ error: 'Network error. Please try again.', success: '' });
         } finally {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout';
 import './SignupPage.css';
@@ -14,6 +14,14 @@ const LoginPage = () => {
     });
     const [status, setStatus] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Check if user is already logged in
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            navigate('/chat');
+        }
+    }, [navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -54,7 +62,8 @@ const LoginPage = () => {
                 return;
             }
 
-            // Store user data in localStorage
+            // Store token and user data in localStorage
+            localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
             
             setStatus('');
