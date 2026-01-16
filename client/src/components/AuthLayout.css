@@ -1,0 +1,133 @@
+.auth-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.auth-left-panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem;
+    overflow: hidden;
+}
+
+.auth-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.auth-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+    /* Add a purple tint as per original design vibe but more subtle over the image */
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.auth-brand {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+.auth-left-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 3rem;
+}
+
+.auth-left-content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: white;
+    /* Smooth text transition */
+    animation: slideUpFade 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.indicator-bar {
+    width: 40px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    transition: background-color 0.8s ease;
+}
+
+.indicator-bar.active {
+    background-color: #ffffff;
+    width: 60px;
+    /* Expand slightly */
+    transition: width 0.8s ease, background-color 0.8s ease;
+}
+
+.auth-right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    /* To ensure it sits above any specific background effects */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-left-panel {
+        flex: none;
+        height: 250px;
+        /* Short header on mobile */
+        padding: 2rem;
+    }
+
+    .auth-left-content h1 {
+        font-size: 2rem;
+    }
+
+    .auth-right-panel {
+        flex: 1;
+        overflow-y: auto;
+    }
+}

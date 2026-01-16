@@ -1,0 +1,150 @@
+.form-wrapper {
+    width: 100%;
+    max-width: 480px;
+}
+
+.form-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.form-header p {
+    color: var(--secondary-text);
+    margin-bottom: 3rem;
+}
+
+.form-header a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.name-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-field {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid transparent;
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: var(--primary-color);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--secondary-text);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.create-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: opacity 0.2s;
+}
+
+.create-btn:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--input-border);
+}
+.helper-text {
+    color: var(--secondary-text);
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.form-message {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.form-message.error {
+    color: #ff8a8a;
+}
+
+.form-message.success {
+    color: #7bd88f;
+}
+.divider span {
+    padding: 0 1rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: white;
+    transition: background 0.2s;
+}
+
+.social-btn:hover {
+    background-color: var(--input-bg);
+}

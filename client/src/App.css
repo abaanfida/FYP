@@ -1,0 +1,46 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --input-bg: #2d2d2d;
+    --input-border: #404040;
+    --primary-color: #7b5eea;
+    /* Violet/Purple from screenshot */
+    --secondary-text: #a0a0a0;
+    --error-color: #ff4d4d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+    outline: none;
+}
+
+/* Hide native password reveal eye in Edge/IE/Windows */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* Hide native password reveal eye in Chrome/Safari/Edge/Webkit */
+input::-webkit-password-reveal-button {
+    display: none;
+    -webkit-appearance: none;
+}
