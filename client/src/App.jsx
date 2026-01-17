@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import ChatPage from './pages/ChatPage';
+import MatcherPage from './pages/MatcherPage';
 import './App.css';
 
 
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/chat" element={<ChatPage />} />
+                <Route path="/match" element={<MatcherPage />} />
             </Routes>
         </Router>
     );

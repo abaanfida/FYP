@@ -79,6 +79,9 @@ const MainPage = () => {
                         >
                             Contacts
                         </button>
+                        <button className="nav-link chat-btn" onClick={() => navigate('/chat')}>
+                            💬 Chat
+                        </button>
                         <button className="nav-link signup-btn" onClick={handleGetStarted}>
                             Sign Up
                         </button>
